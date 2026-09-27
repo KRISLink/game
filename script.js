@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Элементы DOM ---
-    const lamp = document.getElementById('lamp');
-    const lampToggle = document.getElementById('lampToggle');
     const authWrapper = document.getElementById('authWrapper');
     const authCard = document.getElementById('authCard');
     const toggleSwitch = document.getElementById('toggleSwitch');
@@ -16,26 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dashboard = document.getElementById('dashboard');
     const userNameDisplay = document.getElementById('userNameDisplay');
     const logoutBtn = document.getElementById('logoutBtn');
-
-    // --- Состояние ---
-    let isLampOn = false;
-    let isLoginTab = true;
-
-    // --- 1. Логика Лампочки ---
-    lampToggle.addEventListener('click', () => {
-        isLampOn = !isLampOn;
-        
-        if (isLampOn) {
-            lamp.classList.add('on');
-            authWrapper.classList.add('visible');
-        } else {
-            lamp.classList.remove('on');
-            authWrapper.classList.remove('visible');
-            // Сброс ошибок при выключении
-            loginError.textContent = '';
-            signupError.textContent = '';
-        }
-    });
 
     // --- 2. Логика Переключения (Login / Sign Up) ---
     tabLogin.addEventListener('click', () => {
@@ -141,9 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         authWrapper.classList.add('visible');
         sessionStorage.removeItem('mono_current_user');
         
-        // Выключаем лампочку (по желанию, для красоты)
-        isLampOn = false;
-        lamp.classList.remove('on');
     });
 
     // Проверка сессии при загрузке страницы (если уже залогинен)
@@ -156,4 +131,4 @@ document.addEventListener('DOMContentLoaded', () => {
             showDashboard(savedUser);
         }
     }
-});(loc
+})
