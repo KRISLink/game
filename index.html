@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monochrome Auth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Лампочка -->
+    <div class="lamp-container" id="lampToggle">
+        <div class="lamp" id="lamp">
+            <div class="lamp-glow"></div>
+        </div>
+        <p class="lamp-hint">Lamp (click)</p>
+    </div>
+
+    <!-- Контейнер для форм -->
+    <div class="auth-wrapper" id="authWrapper">
+        <div class="auth-card" id="authCard">
+            
+            <!-- Переключатель Login / Sign Up -->
+            <div class="toggle-switch" id="toggleSwitch">
+                <div class="toggle-bg"></div>
+                <span class="toggle-text active" id="tabLogin">Log In</span>
+                <span class="toggle-text" id="tabSignup">Sign Up</span>
+            </div>
+
+            <!-- Форма Входа -->
+            <form id="loginForm" class="form active">
+                <h2>Log In</h2>
+                <div class="input-group">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">LOGIN</button>
+                <p class="error-msg" id="loginError"></p>
+            </form>
+
+            <!-- Форма Регистрации -->
+            <form id="signupForm" class="form">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" id="signupUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">REGISTER</button>
+                <p class="error-msg" id="signupError"></p>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Личный кабинет -->
+    <div class="dashboard" id="dashboard">
+        <div class="dashboard-card">
+            <h1>Личный кабинет</h1>
+            <p>Привет, <span id="userNameDisplay"></span>!</p>
+            <p class="status">Вы успешно вошли в систему.</p>
+            <button id="logoutBtn" class="btn">Выйти</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
